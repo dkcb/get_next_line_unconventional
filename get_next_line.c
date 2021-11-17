@@ -6,13 +6,13 @@
 /*   By: dkocob <dkocob@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/11/04 15:57:56 by dkocob        #+#    #+#                 */
-/*   Updated: 2021/11/17 21:20:15 by dkocob        ########   odam.nl         */
+/*   Updated: 2021/11/17 22:02:15 by dkocob        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include <stdlib.h>
 #include <unistd.h>
+# define BUFFER_SIZE 3
 
 size_t	ft_strlcpy(char *d, char *s, int len)
 {
@@ -70,7 +70,7 @@ char	*get_next_line(int fd)
 {
 	static char	*line;
 
-	line = malloc(sizeof(char) * 200000);
+	line = malloc(sizeof(char) * 20000000);
 	if (!line)
 		return (NULL);
 	return (gnl(fd, line, 1, 0));
